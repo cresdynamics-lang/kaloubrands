@@ -10,6 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("kalou-theme");
+        if (t !== "light" && t !== "dark") {
+          t = "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -28,12 +39,17 @@
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+        <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+      </button>
       <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero hero--compact">
       <div class="container hero-inner">
         <div class="reveal">
@@ -44,48 +60,70 @@
       </div>
     </section>
 
-    <!-- Gallery -->
     <section class="section">
       <div class="container">
         <div class="filters" role="tablist" aria-label="Filter projects">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="apparel">Apparel</button>
           <button class="filter-btn" data-filter="print">Print</button>
-          <button class="filter-btn" data-filter="digital">Digital</button>
+          <button class="filter-btn" data-filter="promo">Promo</button>
           <button class="filter-btn" data-filter="signage">Signage</button>
-          <button class="filter-btn" data-filter="packaging">Packaging</button>
+          <button class="filter-btn" data-filter="vehicle">Vehicle</button>
         </div>
 
         <div class="grid grid-3">
           <div class="work-card reveal" data-project-item data-category="apparel">
-            <img src="images/work/branding-poster.jpeg" alt="Branded apparel and merchandise range" data-hide-on-error />
-            <div class="caption">Apparel &amp; Merch Range <i class="fa-solid fa-shirt"></i></div>
+            <img src="images/work/hoodie-colors.jpeg" alt="Hoodies in five brand colors" data-hide-on-error />
+            <div class="caption">Apparel - Hoodie Range <i class="fa-solid fa-shirt"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/gift-set-cork.jpeg" alt="Cork corporate gift set" data-hide-on-error />
+            <div class="caption">Promo - Cork Gift Set <i class="fa-solid fa-gift"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/tumblers-promo.jpeg" alt="Branded tumblers catalog" data-hide-on-error />
+            <div class="caption">Promo - Tumblers <i class="fa-solid fa-mug-hot"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/office-merch-set.jpeg" alt="Office merch set with tote and notebook" data-hide-on-error />
+            <div class="caption">Promo - Office Merch <i class="fa-solid fa-briefcase"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/gift-box-white.jpeg" alt="White gift box with branded items" data-hide-on-error />
+            <div class="caption">Promo - Gift Box <i class="fa-solid fa-box"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/bottles-colors.jpeg" alt="Water bottles in nine colors" data-hide-on-error />
+            <div class="caption">Promo - Bottle Range <i class="fa-solid fa-bottle-water"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/jute-totes.jpeg" alt="Branded jute tote bags" data-hide-on-error />
+            <div class="caption">Promo - Jute Totes <i class="fa-solid fa-bag-shopping"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="promo">
+            <img src="images/work/mugs-colors.jpeg" alt="Travel mugs in five colors" data-hide-on-error />
+            <div class="caption">Promo - Travel Mugs <i class="fa-solid fa-mug-saucer"></i></div>
+          </div>
+          <div class="work-card reveal" data-project-item data-category="vehicle">
+            <img src="images/work/vehicle-wrap.jpeg" alt="Vehicle branding on delivery van" data-hide-on-error />
+            <div class="caption">Vehicle Branding <i class="fa-solid fa-truck"></i></div>
           </div>
           <div class="work-card reveal" data-project-item data-category="signage">
             <img src="images/work/logo-wall.jpeg" alt="3D logo wall signage" data-hide-on-error />
-            <div class="caption">3D Logo Signage <i class="fa-solid fa-flag"></i></div>
+            <div class="caption">Signage - Logo Wall <i class="fa-solid fa-flag"></i></div>
           </div>
           <div class="work-card reveal" data-project-item data-category="print">
-            <img src="images/work/services-banner.jpeg" alt="Printed branding collateral" data-hide-on-error />
-            <div class="caption">Branded Product Showcase <i class="fa-solid fa-print"></i></div>
+            <img src="images/work/branding-poster.jpeg" alt="Full branding poster" data-hide-on-error />
+            <div class="caption">Print - Brand Poster <i class="fa-solid fa-print"></i></div>
           </div>
-          <div class="work-card reveal" data-project-item data-category="digital">
-            <img src="images/work/logo-splash.jpeg" alt="Kalou Brands logo design" data-hide-on-error />
-            <div class="caption">Logo &amp; Identity - Concept Work <i class="fa-solid fa-pen-nib"></i></div>
-          </div>
-          <div class="work-card reveal" data-project-item data-category="packaging">
-            <img src="images/mockups/packaging-1.jpg" alt="Packaging project" data-hide-on-error />
-            <div class="caption">Packaging - Retail Box <i class="fa-solid fa-box"></i></div>
-          </div>
-          <div class="work-card reveal" data-project-item data-category="apparel">
-            <img src="images/mockups/apparel-3.jpg" alt="Hoodie print project" data-hide-on-error />
-            <div class="caption">Apparel - Hoodie Print <i class="fa-solid fa-shirt"></i></div>
+          <div class="work-card reveal" data-project-item data-category="print">
+            <img src="images/work/services-banner.jpeg" alt="Services banner with product mockups" data-hide-on-error />
+            <div class="caption">Print - Services Banner <i class="fa-solid fa-print"></i></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA close -->
     <section class="section">
       <div class="container">
         <div class="cta-band reveal">

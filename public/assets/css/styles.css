@@ -1,26 +1,47 @@
 /* ============================================================
-   KALOU BRANDS — Create. Connect. Elevate.
-   Flat, professional design system.
+   KALOU BRANDS - Create. Connect. Elevate.
+   Light mode design system.
    Midnight Navy #0A0F1F | Signal Gold #D4AF37 | Electric Blue #1E88E5
    ============================================================ */
 
 :root {
   --navy: #0A0F1F;
-  --navy-2: #0E1528;
-  --navy-3: #131C33;
+  --navy-soft: #1a2338;
   --gold: #D4AF37;
-  --gold-soft: rgba(212, 175, 55, 0.12);
+  --gold-soft: rgba(212, 175, 55, 0.14);
   --electric: #1E88E5;
-  --electric-soft: rgba(30, 136, 229, 0.12);
-  --text: #EDF0F7;
-  --text-soft: rgba(237, 240, 247, 0.68);
-  --muted: rgba(237, 240, 247, 0.45);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
+  --bg: #F7F8FB;
+  --bg-soft: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-alt: #F0F2F7;
+  --text: #0A0F1F;
+  --text-soft: #4A5568;
+  --muted: #7A8499;
+  --border: rgba(10, 15, 31, 0.08);
+  --border-strong: rgba(10, 15, 31, 0.16);
+  --shadow: 0 10px 30px rgba(10, 15, 31, 0.06);
+  --header-bg: rgba(247, 248, 251, 0.96);
+  --toggle-bg: #FFFFFF;
   --radius: 16px;
   --radius-sm: 10px;
   --container: 1180px;
   --header-h: 76px;
+}
+
+html[data-theme="dark"] {
+  --bg: #0A0F1F;
+  --bg-soft: #0E1528;
+  --surface: #121b36;
+  --surface-alt: #0E1528;
+  --text: #EDF0F7;
+  --text-soft: rgba(237, 240, 247, 0.72);
+  --muted: rgba(237, 240, 247, 0.48);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+  --header-bg: rgba(10, 15, 31, 0.96);
+  --toggle-bg: #121b36;
+  --gold-soft: rgba(212, 175, 55, 0.16);
 }
 
 * { box-sizing: border-box; }
@@ -32,7 +53,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: var(--text);
-  background: var(--navy);
+  background: var(--bg);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -45,7 +66,7 @@ img { display: block; max-width: 100%; }
 h1, h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.18;
-  color: #fff;
+  color: var(--text);
   letter-spacing: -0.01em;
 }
 
@@ -109,7 +130,7 @@ h1, h2, h3, h4 {
 }
 
 .site-header.scrolled {
-  background: rgba(10, 15, 31, 0.96);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   border-bottom-color: var(--border);
 }
@@ -132,7 +153,7 @@ h1, h2, h3, h4 {
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border-strong);
-  background: var(--navy-3);
+  background: var(--surface);
 }
 
 .brand-text .kalou-brands {
@@ -141,7 +162,7 @@ h1, h2, h3, h4 {
   font-weight: 800;
   font-size: 0.98rem;
   letter-spacing: 0.12em;
-  color: #fff;
+  color: var(--text);
 }
 
 .brand-text .kalou-brands strong { color: var(--gold); font-weight: 800; }
@@ -178,8 +199,36 @@ h1, h2, h3, h4 {
   transition: transform 0.25s ease;
 }
 
-.nav a:hover, .nav a:focus-visible, .nav a.active { color: #fff; }
+.nav a:hover, .nav a:focus-visible, .nav a.active { color: var(--text); }
 .nav a:hover::after, .nav a.active::after { transform: scaleX(1); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--toggle-bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.theme-toggle .theme-icon-light { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-icon-dark { display: none; }
+html[data-theme="dark"] .theme-toggle .theme-icon-light { display: inline-block; }
 
 /* ---------- Hamburger ---------- */
 
@@ -204,7 +253,7 @@ h1, h2, h3, h4 {
   display: block;
   width: 20px;
   height: 2px;
-  background: #fff;
+  background: var(--text);
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
@@ -241,7 +290,7 @@ h1, h2, h3, h4 {
 .btn-gold:hover { background: #e5c352; }
 
 .btn-outline {
-  color: #fff;
+  color: var(--text);
   border-color: var(--border-strong);
   background: transparent;
 }
@@ -253,7 +302,7 @@ h1, h2, h3, h4 {
   background: var(--navy);
 }
 
-.btn-navy:hover { background: var(--navy-3); }
+.btn-navy:hover { background: var(--navy-soft); }
 
 /* ---------- Hero ---------- */
 
@@ -262,13 +311,12 @@ h1, h2, h3, h4 {
   overflow: hidden;
   margin-top: calc(var(--header-h) * -1);
   padding: calc(var(--header-h) + 6.5rem) 0 6.5rem;
-  background: var(--navy);
+  background: var(--bg-soft);
   border-bottom: 1px solid var(--border);
 }
 
 .hero--compact { padding: calc(var(--header-h) + 4.5rem) 0 4.5rem; }
 
-/* Flat geometric backdrop — no gradients */
 .hero::before {
   content: '';
   position: absolute;
@@ -277,8 +325,8 @@ h1, h2, h3, h4 {
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse at 75% 20%, rgba(0,0,0,0.5), transparent 60%);
-  -webkit-mask-image: radial-gradient(ellipse at 75% 20%, rgba(0,0,0,0.5), transparent 60%);
+  mask-image: radial-gradient(ellipse at 75% 20%, rgba(0,0,0,0.35), transparent 60%);
+  -webkit-mask-image: radial-gradient(ellipse at 75% 20%, rgba(0,0,0,0.35), transparent 60%);
   pointer-events: none;
 }
 
@@ -315,18 +363,19 @@ h1, h2, h3, h4 {
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 .card, .work-card, .service-card {
-  background: var(--navy-2);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  box-shadow: var(--shadow);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card { padding: 1.8rem; }
 
 .card:hover, .service-card:hover {
   border-color: var(--border-strong);
-  background: var(--navy-3);
   transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(10, 15, 31, 0.1);
 }
 
 .card h3 { margin: 0 0 0.4rem; font-size: 1.06rem; font-weight: 700; }
@@ -368,7 +417,7 @@ h1, h2, h3, h4 {
   object-fit: cover;
   border-radius: var(--radius-sm);
   margin: 0.5rem 0;
-  background: var(--navy-3);
+  background: var(--surface-alt);
 }
 
 .service-card .btn {
@@ -401,11 +450,12 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   gap: 0.6rem;
   padding: 1.05rem 1.3rem;
-  color: #fff;
+  color: var(--text);
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 0.92rem;
   border-top: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .work-card .caption i { color: var(--gold); font-size: 0.8rem; }
@@ -447,9 +497,10 @@ h1, h2, h3, h4 {
 /* ---------- Footer ---------- */
 
 .footer {
-  background: var(--navy-2);
-  border-top: 1px solid var(--border);
+  background: var(--navy);
+  border-top: 1px solid transparent;
   padding: 3.5rem 0 2rem;
+  color: #EDF0F7;
 }
 
 .footer-top {
@@ -457,10 +508,13 @@ h1, h2, h3, h4 {
   grid-template-columns: 1.3fr 0.8fr 1fr 1fr;
   gap: 2.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-logo { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.9rem; }
+
+.footer .brand-text .kalou-brands { color: #fff; }
+.footer .logo-img { border-color: rgba(255, 255, 255, 0.2); }
 
 .footer .tagline {
   font-family: 'Montserrat', sans-serif;
@@ -471,16 +525,16 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-.footer h4 { margin: 0 0 0.8rem; font-size: 0.95rem; }
-.footer p { color: var(--text-soft); margin: 0.3rem 0; font-size: 0.94rem; }
+.footer h4 { margin: 0 0 0.8rem; font-size: 0.95rem; color: #fff; }
+.footer p { color: rgba(237, 240, 247, 0.7); margin: 0.3rem 0; font-size: 0.94rem; }
 
 .footer-nav { display: flex; flex-direction: column; gap: 0.5rem; }
-.footer-nav a, .link { color: var(--text-soft); font-size: 0.94rem; transition: color 0.2s ease; }
+.footer-nav a, .link { color: rgba(237, 240, 247, 0.7); font-size: 0.94rem; transition: color 0.2s ease; }
 .footer-nav a:hover, .link:hover { color: var(--gold); }
 
 .footer-bottom {
   padding-top: 1.4rem;
-  color: var(--muted);
+  color: rgba(237, 240, 247, 0.45);
   font-size: 0.85rem;
 }
 
@@ -528,8 +582,8 @@ h1, h2, h3, h4 {
   display: grid;
   place-items: center;
   color: var(--gold);
-  background: var(--navy-2);
-  border: 1px solid var(--border);
+  background: var(--navy);
+  border: 1px solid transparent;
   font-size: 0.95rem;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -542,6 +596,7 @@ h1, h2, h3, h4 {
 }
 
 .social-inline { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.footer .social-btn { background: rgba(255, 255, 255, 0.08); }
 
 /* ---------- Filters ---------- */
 
@@ -554,7 +609,7 @@ h1, h2, h3, h4 {
 
 .filter-btn {
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--surface);
   color: var(--text-soft);
   border-radius: var(--radius-sm);
   padding: 0.6rem 1.15rem;
@@ -566,7 +621,7 @@ h1, h2, h3, h4 {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.filter-btn:hover { color: #fff; border-color: var(--border-strong); }
+.filter-btn:hover { color: var(--text); border-color: var(--border-strong); }
 
 .filter-btn.active {
   background: var(--gold);
@@ -594,7 +649,7 @@ h1, h2, h3, h4 {
   font: inherit;
   font-size: 0.95rem;
   color: var(--text);
-  background: var(--navy);
+  background: var(--bg);
   transition: border-color 0.2s ease;
 }
 
@@ -605,7 +660,7 @@ h1, h2, h3, h4 {
   border-color: var(--gold);
 }
 
-.select option { background: var(--navy-2); }
+.select option { background: var(--surface); }
 .textarea { min-height: 140px; resize: vertical; }
 
 .form-status {
@@ -621,15 +676,17 @@ h1, h2, h3, h4 {
   display: block;
   background: rgba(37, 211, 102, 0.1);
   border: 1px solid rgba(37, 211, 102, 0.35);
-  color: #7ce0a3;
+  color: #1a7a45;
 }
 
 .form-status.error {
   display: block;
-  background: rgba(224, 64, 64, 0.1);
-  border: 1px solid rgba(224, 64, 64, 0.35);
-  color: #f0908d;
+  background: rgba(224, 64, 64, 0.08);
+  border: 1px solid rgba(224, 64, 64, 0.3);
+  color: #b42318;
 }
+
+.form-note { font-size: 0.88rem; color: var(--muted); margin: 0; }
 
 /* ---------- Services quick nav ---------- */
 
@@ -651,6 +708,7 @@ h1, h2, h3, h4 {
   color: var(--text-soft);
   font-weight: 500;
   font-size: 0.88rem;
+  background: var(--surface);
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -662,7 +720,7 @@ h1, h2, h3, h4 {
   text-align: center;
   border: 1px dashed var(--border-strong);
   border-radius: var(--radius);
-  background: var(--navy-2);
+  background: var(--surface);
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -675,7 +733,6 @@ h1, h2, h3, h4 {
 
 .reveal.visible { opacity: 1; transform: none; }
 
-/* Stagger children inside grids */
 .grid .reveal.visible:nth-child(2) { transition-delay: 0.07s; }
 .grid .reveal.visible:nth-child(3) { transition-delay: 0.14s; }
 .grid .reveal.visible:nth-child(4) { transition-delay: 0.21s; }
@@ -696,6 +753,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 760px) {
   .header-inner { flex-wrap: wrap; }
+  .header-actions { margin-left: auto; }
   .nav-toggle { display: flex; }
 
   .nav {
@@ -719,7 +777,7 @@ h1, h2, h3, h4 {
   .nav a:last-child { border-bottom: none; }
 
   .site-header {
-    background: rgba(10, 15, 31, 0.96);
+    background: var(--header-bg);
     border-bottom-color: var(--border);
   }
 

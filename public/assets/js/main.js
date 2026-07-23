@@ -1,6 +1,34 @@
 (function () {
   'use strict';
 
+  // Theme: light / dark with localStorage persistence
+  var root = document.documentElement;
+  var THEME_KEY = 'kalou-theme';
+
+  function getPreferredTheme() {
+    var saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') return saved;
+    return 'dark';
+  }
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  }
+
+  applyTheme(getPreferredTheme());
+
+  document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  });
+
   // Inject logo image on every page
   document.querySelectorAll('.js-logo').forEach(function (img) {
     img.src = 'images/logo.jpeg';
@@ -16,6 +44,7 @@
   // Sticky header: transparent over hero, solid on scroll
   var header = document.querySelector('.site-header');
   function onScroll() {
+    if (!header) return;
     header.classList.toggle('scrolled', window.scrollY > 30);
   }
   if (header) {
@@ -134,7 +163,7 @@
         .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body }; }); })
         .then(function (result) {
           if (result.ok) {
-            status.textContent = 'Brief received — we\'ll get back to you shortly. Thank you!';
+            status.textContent = 'Brief received - we\'ll get back to you shortly. Thank you!';
             status.className = 'form-status success';
             form.reset();
           } else {
@@ -142,7 +171,7 @@
           }
         })
         .catch(function (err) {
-          status.textContent = err.message || 'Could not send right now — please try WhatsApp or call 0700 944 414.';
+          status.textContent = err.message || 'Could not send right now - please try WhatsApp or call 0700 944 414.';
           status.className = 'form-status error';
         })
         .finally(function () {

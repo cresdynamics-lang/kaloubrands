@@ -10,6 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("kalou-theme");
+        if (t !== "light" && t !== "dark") {
+          t = "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -28,7 +39,14 @@
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>    </div>
+      <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+        <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+      </button>
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -104,7 +122,7 @@
             <div class="icon"><i class="fa-solid fa-shirt"></i></div>
             <h3>Apparel Branding</h3>
             <p>Hoodies, tees, polos - your team as a walking billboard.</p>
-            <img src="images/work/branding-poster.jpeg" alt="Branded apparel sample" data-hide-on-error />
+            <img src="images/work/hoodie-colors.jpeg" alt="Branded apparel sample" data-hide-on-error />
             <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Apparel%20Branding">Brand My Apparel</a>
           </article>
 
@@ -112,7 +130,7 @@
             <div class="icon"><i class="fa-solid fa-truck"></i></div>
             <h3>Vehicle Branding</h3>
             <p>Turn every trip into brand exposure.</p>
-            <img src="images/services/vehicle-sample.jpg" alt="Vehicle branding sample" data-hide-on-error />
+            <img src="images/work/vehicle-wrap.jpeg" alt="Vehicle branding sample" data-hide-on-error />
             <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Vehicle%20Branding">Brand My Vehicle</a>
           </article>
 
@@ -120,7 +138,7 @@
             <div class="icon"><i class="fa-solid fa-box"></i></div>
             <h3>Packaging Design</h3>
             <p>Packaging that makes unboxing part of the brand.</p>
-            <img src="images/services/packaging-sample.jpg" alt="Packaging design sample" data-hide-on-error />
+            <img src="images/work/jute-totes.jpeg" alt="Packaging design sample" data-hide-on-error />
             <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Packaging%20Design">Design My Packaging</a>
           </article>
 
@@ -128,7 +146,7 @@
             <div class="icon"><i class="fa-solid fa-mug-hot"></i></div>
             <h3>Promotional Items</h3>
             <p>Mugs, bottles, bags, pens - branded merch people actually keep.</p>
-            <img src="images/services/promo-sample.jpg" alt="Promotional items sample" data-hide-on-error />
+            <img src="images/work/gift-set-cork.jpeg" alt="Promotional items sample" data-hide-on-error />
             <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Promotional%20Items">Get Promo Items</a>
           </article>
         </div>

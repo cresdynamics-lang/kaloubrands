@@ -10,6 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("kalou-theme");
+        if (t !== "light" && t !== "dark") {
+          t = "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <!-- Header -->
@@ -29,7 +40,13 @@
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+        <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+      </button>
       <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
@@ -156,16 +173,16 @@
         <div class="spacer"></div>
         <div class="grid grid-3">
           <a class="work-card reveal" href="projects.html">
-            <img src="images/work/branding-poster.jpeg" alt="Kalou Brands apparel and merchandise branding" data-hide-on-error />
-            <div class="caption">Apparel &amp; Merch Branding <i class="fa-solid fa-arrow-right"></i></div>
+            <img src="images/work/hoodie-colors.jpeg" alt="Branded hoodies in multiple colors" data-hide-on-error />
+            <div class="caption">Apparel Branding <i class="fa-solid fa-arrow-right"></i></div>
           </a>
           <a class="work-card reveal" href="projects.html">
-            <img src="images/work/services-banner.jpeg" alt="Kalou Brands branded products showcase" data-hide-on-error />
-            <div class="caption">Branded Product Range <i class="fa-solid fa-arrow-right"></i></div>
+            <img src="images/work/gift-set-cork.jpeg" alt="Corporate gift set with notebook and tumbler" data-hide-on-error />
+            <div class="caption">Promo Gift Sets <i class="fa-solid fa-arrow-right"></i></div>
           </a>
           <a class="work-card reveal" href="projects.html">
-            <img src="images/work/logo-wall.jpeg" alt="Kalou Brands 3D logo signage" data-hide-on-error />
-            <div class="caption">Signage &amp; Brand Identity <i class="fa-solid fa-arrow-right"></i></div>
+            <img src="images/work/vehicle-wrap.jpeg" alt="Kalou Brands vehicle branding wrap" data-hide-on-error />
+            <div class="caption">Vehicle Branding <i class="fa-solid fa-arrow-right"></i></div>
           </a>
         </div>
         <div class="spacer"></div>
