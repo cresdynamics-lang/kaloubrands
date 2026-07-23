@@ -34,9 +34,17 @@
     img.src = 'images/logo.jpeg';
   });
 
-  // Hide images that fail to load
+  // Hide images that fail to load - replace service media with branded panel
   document.querySelectorAll('[data-hide-on-error]').forEach(function (img) {
     img.addEventListener('error', function () {
+      var media = img.closest('.service-media');
+      if (media) {
+        var title = (media.closest('.service-card') || {}).querySelector
+          ? (media.closest('.service-card').querySelector('h3') || {}).textContent || 'Kalou Brands'
+          : 'Kalou Brands';
+        media.innerHTML = '<div class="service-visual"><span>' + title + '</span></div>';
+        return;
+      }
       img.style.display = 'none';
     });
   });
@@ -50,6 +58,25 @@
   if (header) {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Subtle scroll reaction for media blocks
+  var mediaBlocks = document.querySelectorAll('.parallax-media');
+  function updateMediaScroll() {
+    var vh = window.innerHeight || 1;
+    mediaBlocks.forEach(function (block) {
+      var rect = block.getBoundingClientRect();
+      var mid = rect.top + rect.height / 2;
+      var progress = Math.max(-1, Math.min(1, (mid - vh / 2) / vh));
+      var img = block.querySelector('img');
+      if (!img || img.style.display === 'none') return;
+      img.style.transform = 'scale(' + (1.04 + Math.abs(progress) * 0.04) + ') translateY(' + (progress * -8) + 'px)';
+    });
+  }
+  if (mediaBlocks.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    updateMediaScroll();
+    window.addEventListener('scroll', updateMediaScroll, { passive: true });
+    window.addEventListener('resize', updateMediaScroll, { passive: true });
   }
 
   // Hamburger menu

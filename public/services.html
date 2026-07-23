@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/images/favicon-48.png" type="image/png" sizes="48x48" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
     (function () {
@@ -40,19 +44,18 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
-      <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
-        <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
-        <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
-      </button>
-      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+          <i class="fa-solid fa-moon theme-icon-dark" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun theme-icon-light" aria-hidden="true"></i>
+        </button>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero hero--compact">
-            <div class="container hero-inner">
+      <div class="container hero-inner">
         <div class="reveal">
           <span class="eyebrow">Our Services</span>
           <h1>Everything Your Brand Needs. <span class="gold">Nowhere Else To Go.</span></h1>
@@ -74,86 +77,120 @@
       </div>
     </section>
 
-    <!-- Service grid -->
     <section class="section">
       <div class="container">
         <div class="grid grid-3">
           <article id="logo-design" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
-            <h3>Logo Design</h3>
-            <p>The face of your brand, designed to be remembered.</p>
-            <img src="images/work/logo-splash.jpeg" alt="Kalou Brands logo design sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Logo%20Design">Start My Logo</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/logo-splash.jpeg" alt="Kalou Brands logo design sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
+              <h3>Logo Design</h3>
+              <p>The face of your brand, designed to be remembered.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Logo%20Design">Start My Logo</a>
+            </div>
           </article>
 
           <article id="brand-identity" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-id-card-clip"></i></div>
-            <h3>Brand Identity</h3>
-            <p>Colors, fonts, guidelines - consistency that builds trust.</p>
-            <img src="images/work/logo-wall.jpeg" alt="Brand identity signage sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Brand%20Identity">Build My Identity</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/logo-wall.jpeg" alt="Brand identity signage sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-id-card-clip"></i></div>
+              <h3>Brand Identity</h3>
+              <p>Colors, fonts, guidelines - consistency that builds trust.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Brand%20Identity">Build My Identity</a>
+            </div>
           </article>
 
           <article id="print-design" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-print"></i></div>
-            <h3>Print Design</h3>
-            <p>Flyers, posters, brochures - print that gets picked up, not thrown away.</p>
-            <img src="images/services/print-sample.jpg" alt="Print design sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Print%20Design">Get Print Designs</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/branding-poster.jpeg" alt="Print design and branding poster sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-print"></i></div>
+              <h3>Print Design</h3>
+              <p>Flyers, posters, brochures - print that gets picked up, not thrown away.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Print%20Design">Get Print Designs</a>
+            </div>
           </article>
 
           <article id="digital-design" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-display"></i></div>
-            <h3>Digital Design</h3>
-            <p>Scroll-stopping visuals for every platform - social media, web banners, and more.</p>
-            <img src="images/services/digital-sample.jpg" alt="Digital design sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Digital%20Design">Get Digital Assets</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/tumblers-promo.jpeg" alt="Digital design and product campaign sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-display"></i></div>
+              <h3>Digital Design</h3>
+              <p>Scroll-stopping visuals for every platform - social media, web banners, and more.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Digital%20Design">Get Digital Assets</a>
+            </div>
           </article>
 
           <article id="signage-banners" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-flag"></i></div>
-            <h3>Signage &amp; Banners</h3>
-            <p>Make your storefront impossible to ignore.</p>
-            <img src="images/work/services-banner.jpeg" alt="Signage and banner sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Signage%20and%20Banners">Order Signage</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/services-banner.jpeg" alt="Signage and banner sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-flag"></i></div>
+              <h3>Signage &amp; Banners</h3>
+              <p>Make your storefront impossible to ignore.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Signage%20and%20Banners">Order Signage</a>
+            </div>
           </article>
 
           <article id="apparel-branding" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-shirt"></i></div>
-            <h3>Apparel Branding</h3>
-            <p>Hoodies, tees, polos - your team as a walking billboard.</p>
-            <img src="images/work/hoodie-colors.jpeg" alt="Branded apparel sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Apparel%20Branding">Brand My Apparel</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/hoodie-colors.jpeg" alt="Branded apparel sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-shirt"></i></div>
+              <h3>Apparel Branding</h3>
+              <p>Hoodies, tees, polos - your team as a walking billboard.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Apparel%20Branding">Brand My Apparel</a>
+            </div>
           </article>
 
           <article id="vehicle-branding" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-truck"></i></div>
-            <h3>Vehicle Branding</h3>
-            <p>Turn every trip into brand exposure.</p>
-            <img src="images/work/vehicle-wrap.jpeg" alt="Vehicle branding sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Vehicle%20Branding">Brand My Vehicle</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/vehicle-wrap.jpeg" alt="Vehicle branding sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-truck"></i></div>
+              <h3>Vehicle Branding</h3>
+              <p>Turn every trip into brand exposure.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Vehicle%20Branding">Brand My Vehicle</a>
+            </div>
           </article>
 
           <article id="packaging-design" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-box"></i></div>
-            <h3>Packaging Design</h3>
-            <p>Packaging that makes unboxing part of the brand.</p>
-            <img src="images/work/jute-totes.jpeg" alt="Packaging design sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Packaging%20Design">Design My Packaging</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/jute-totes.jpeg" alt="Packaging and tote branding sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-box"></i></div>
+              <h3>Packaging Design</h3>
+              <p>Packaging that makes unboxing part of the brand.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Packaging%20Design">Design My Packaging</a>
+            </div>
           </article>
 
           <article id="promotional-items" class="card service-card reveal">
-            <div class="icon"><i class="fa-solid fa-mug-hot"></i></div>
-            <h3>Promotional Items</h3>
-            <p>Mugs, bottles, bags, pens - branded merch people actually keep.</p>
-            <img src="images/work/gift-set-cork.jpeg" alt="Promotional items sample" data-hide-on-error />
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Promotional%20Items">Get Promo Items</a>
+            <div class="service-media parallax-media">
+              <img src="images/work/gift-set-cork.jpeg" alt="Promotional items sample" data-hide-on-error />
+            </div>
+            <div class="service-body">
+              <div class="icon"><i class="fa-solid fa-mug-hot"></i></div>
+              <h3>Promotional Items</h3>
+              <p>Mugs, bottles, bags, pens - branded merch people actually keep.</p>
+              <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/254700944414?text=Hi%20Kalou%20Brands%2C%20I%27m%20interested%20in%20Promotional%20Items">Get Promo Items</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Closing CTA -->
     <section class="section">
       <div class="container">
         <div class="cta-band reveal">
